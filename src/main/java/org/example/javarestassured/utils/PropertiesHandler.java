@@ -10,10 +10,9 @@ public class PropertiesHandler {
 
     public static Properties getProperties() {
         if (Objects.isNull(properties)) {
-            try (FileInputStream inputStream = new FileInputStream("/src/main/resources/app.properties")) {
+            try (FileInputStream inputStream = new FileInputStream("src/main/resources/app.properties")) {
                 properties = new Properties();
                 properties.load(inputStream);
-                return properties;
             } catch (IOException e) {
                 System.err.println("There was a problem with properties loading");
             }
